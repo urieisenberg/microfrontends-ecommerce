@@ -32,4 +32,4 @@ if (process.env.NODE_ENV === 'development') {
 // through the CONTAINER app
 // no gurantee that an element with an id of 'dev-products' exists
 // we do not want to try to immediately render the app
-export { mount };
+export { mount }; // for container app
