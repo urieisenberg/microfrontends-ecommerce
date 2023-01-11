@@ -12,17 +12,24 @@ const mount = (el) => {
 };
 
 //sub app execution context
-//Context #1:
+//Context / Situation #1:
 // file running in development in isolation
 // using local index.html file
 // which DEFINITELY has an element with an id of 'dev-products'
 // need to immediately render our app into that element
+if (process.env.NODE_ENV === 'development') {
+  // assuming our container doesn't have an element
+  // with id 'dev-products'
+  const el = document.querySelector('#dev-products');
+  if (el) {
+    //probably running in isolation
+    mount(el);
+  }
+}
 
-
-//Context #2:
+//Context / Situation #2:
 // file is running in development or production
 // through the CONTAINER app
 // no gurantee that an element with an id of 'dev-products' exists
 // we do not want to try to immediately render the app
 export { mount };
-
