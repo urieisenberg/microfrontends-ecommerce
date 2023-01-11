@@ -10,7 +10,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'container',
       remotes: {
-        products: 'products@http://localhost:8081/remoteEntry.js',
+        // remotes lists project that the container can search to get additional code
+        // products: load the file at the listed URL if anything in container has an import
+        products: 'products@http://localhost:8081/remoteEntry.js', //products related to the 'name' property in the procuts webpack config file and the url is for the remoteEntry file
       },
     }),
     new HtmlWebpackPlugin({
