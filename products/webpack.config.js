@@ -11,7 +11,7 @@ module.exports = {
       name: 'products',
       filename: 'remoteEntry.js', //for lists different modules that can be loaded from the Products project
       exposes: {
-        './ProductsIndex': './src/index',
+        './ProductsIndex': './src/bootstrap',
       },
       shared: ['faker'],
     }),
